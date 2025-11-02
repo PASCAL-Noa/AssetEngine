@@ -1,0 +1,43 @@
+#include <pch.h>
+#include <filesystem>
+
+// ============================================================================
+// TOGGLE MODE: Uncomment ONE of the following defines
+// ============================================================================
+
+#define MODE_CLI       // CLI Production (default)
+// #define MODE_TESTS  // Unit Tests (Memory + Archive)
+
+// ============================================================================
+
+#ifdef MODE_CLI
+
+// ============================================================================
+// CLI MODE - PRODUCTION
+// ============================================================================
+
+#include "DisplayMenu.h"
+
+int main(int argc, const char* argv[])
+{
+    return DisplayMenu::Run(argc, argv, DisplayMenu::Mode::CLI);
+}
+
+#endif // MODE_CLI
+
+// ============================================================================
+
+#ifdef MODE_TESTS
+
+// ============================================================================
+// TEST MODE - UNIT TESTS
+// ============================================================================
+
+#include "DisplayMenu.h"
+
+int main(int argc, char* argv[])
+{
+    return DisplayMenu::Run(argc, (const char**)argv, DisplayMenu::Mode::TESTS);
+}
+
+#endif // MODE_TESTS

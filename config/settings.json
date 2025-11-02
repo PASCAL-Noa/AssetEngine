@@ -1,0 +1,21 @@
+{
+    "projects": {
+        "AssetEngine": {
+            "additionalDependencies": [],
+            "additionalIncludeDirectories": [],
+            "additionalLibraryDirectories": [],
+            "dependencies": [],
+            "dependents": [],
+            "guid": "288C59F9-5455-6B48-3E90-3DC250BC3312",
+            "lib": false,
+            "pch": true,
+            "preprocessorDefinitions": [],
+            "vcpkg": false,
+            "window": false
+        }
+    },
+    "solution_guid": "36233A44-11C4-2B8D-5986-09100BC75693",
+    "solution_name": "AssetEngine",
+    "startup_project": "AssetEngine",
+    "version": "1.17.4"
+}

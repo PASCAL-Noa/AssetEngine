@@ -1,0 +1,50 @@
+Copy-Paste in CMD  
+
+  # Créer fichiers
+  "Content 1" | Out-File test1.txt -Encoding ASCII
+  "Content 2" | Out-File test2.txt -Encoding ASCII
+  "Content 3" | Out-File test3.txt -Encoding ASCII
+
+  Write-Host "`n=== 1. CREATE ===" -ForegroundColor Cyan
+  .\AssetEngine.exe create my_archive.asset test1.txt test2.txt test3.txt
+
+  Write-Host "`n=== 2. LIST ===" -ForegroundColor Cyan
+  .\AssetEngine.exe list my_archive.asset
+
+  Write-Host "`n=== 3. VALIDATE ===" -ForegroundColor Cyan
+  .\AssetEngine.exe validate my_archive.asset
+
+  Write-Host "`n=== 4. ADD ===" -ForegroundColor Cyan
+  "New content" | Out-File test4.txt -Encoding ASCII
+  .\AssetEngine.exe add my_archive.asset test4.txt
+
+  Write-Host "`n=== 5. LIST (should have 4 files) ===" -ForegroundColor Cyan
+  .\AssetEngine.exe list my_archive.asset
+
+  Write-Host "`n=== 6. EXTRACT ===" -ForegroundColor Cyan
+  .\AssetEngine.exe extract my_archive.asset test1.txt extracted_test1.txt
+  Get-Content extracted_test1.txt
+
+  Write-Host "`n=== 7. REMOVE ===" -ForegroundColor Cyan
+  .\AssetEngine.exe remove my_archive.asset test2.txt
+
+  Write-Host "`n=== 8. LIST (should have 3 active) ===" -ForegroundColor Cyan
+  .\AssetEngine.exe list my_archive.asset
+
+  Write-Host "`n=== 9. RENAME ===" -ForegroundColor Cyan
+  .\AssetEngine.exe rename my_archive.asset test3.txt renamed.txt
+
+  Write-Host "`n=== 10. LIST (should see renamed.txt) ===" -ForegroundColor Cyan
+  .\AssetEngine.exe list my_archive.asset
+
+  Write-Host "`n=== 11. EXTRACTALL ===" -ForegroundColor Cyan
+  .\AssetEngine.exe extractall my_archive.asset extracted_folder
+  Get-ChildItem extracted_folder
+
+  Write-Host "`n=== 12. COMPACT ===" -ForegroundColor Cyan
+  .\AssetEngine.exe compact my_archive.asset
+
+  Write-Host "`n=== 13. VALIDATE FINAL ===" -ForegroundColor Cyan
+  .\AssetEngine.exe validate my_archive.asset
+
+  Write-Host "`n=== ALL TESTS COMPLETED ===" -ForegroundColor Green
