@@ -21,7 +21,7 @@ Le projet implémente un **format d'archive autonome** avec les fonctionnalités
 
 ## Structure générale du format
 
-  ---
+  ```
 
   ┌─────────────────────────────────────────────┐
   │           ARCHIVE FILE (.asset)             │
@@ -53,7 +53,7 @@ Le projet implémente un **format d'archive autonome** avec les fonctionnalités
   │  FILE N                                     │
   └─────────────────────────────────────────────┘
 
-  ---
+  ```
 
 ## 1. Composants principaux du système
 
